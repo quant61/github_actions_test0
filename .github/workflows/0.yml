@@ -13,11 +13,9 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - run: echo 'github.workspace=${{ github.workspace	}}  github.run_number=${{ github.run_number }}'
-      - run: pwd
-      - run: ls
+      - run: go env
       - run: env
       - run: df
-      - run: ls /
       - run: ps
   Linux-Work:
     runs-on: ubuntu-latest
