@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
 on: [push, check_run]
 jobs:
-  Null-Work:
+  Crossplatform-Work:
     runs-on: ${{ matrix.config.os }}
     strategy:
       matrix:
@@ -13,7 +13,28 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - run: pwd
+      - run: ls
+      - run: env
+      - run: df
+      - run: ls /
+  Linux-Work:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: pwd
       - run: ls -ali
       - run: df -BM
       - run: ls -ali /
       - run: env
+  Windows-Work:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+  Macos-Work:
+    runs-on: macos-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        
