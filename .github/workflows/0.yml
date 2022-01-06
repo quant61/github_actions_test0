@@ -2,7 +2,13 @@ name: GitHub Actions Demo
 on: [push, check_run]
 jobs:
   Null-Work:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      matrix:
+        config:
+          - os: ubuntu-latest
+          - os: macos-latest
+          - os: windows-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
