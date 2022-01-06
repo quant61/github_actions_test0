@@ -17,6 +17,7 @@ jobs:
       - run: env
       - run: df
       - run: ls /
+      - run: ps
   Linux-Work:
     runs-on: ubuntu-latest
     steps:
@@ -27,6 +28,7 @@ jobs:
       - run: df -BM
       - run: ls -ali /
       - run: env
+      - run: ps -ef
   Windows-Work:
     runs-on: windows-latest
     steps:
@@ -37,4 +39,5 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-        
+      - run: ls -ali /
+      - run: ps -ef
