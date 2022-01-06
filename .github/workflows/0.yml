@@ -8,3 +8,5 @@ jobs:
       - run: ls -ali
       - run: df -BM
       - run: ls -ali /
+      - run: env
+      - run: echo ${{ github.workspace }}
