@@ -4,9 +4,10 @@ jobs:
   Null-Work:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
       - run: pwd
       - run: ls -ali
       - run: df -BM
       - run: ls -ali /
       - run: env
-      - run: echo ${{ github.workspace }}
