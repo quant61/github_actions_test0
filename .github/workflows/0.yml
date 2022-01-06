@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - run: echo 'github.workspace={{ github.workspace	}}  github.run_number={{ github.run_number }}'
+      - run: echo 'github.workspace=${{ github.workspace	}}  github.run_number=${{ github.run_number }}'
       - run: pwd
       - run: ls
       - run: env
