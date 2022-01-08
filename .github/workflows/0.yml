@@ -17,6 +17,14 @@ jobs:
       - run: env
       - run: df
       - run: ps
+      - run: echo hello > 42.txt
+      - name: Upload artifact test
+        uses: actions/upload-artifact@v2
+        with:
+          name: test text file
+          path: |
+            42.txt
+  
   Linux-Work:
     runs-on: ubuntu-latest
     steps:
