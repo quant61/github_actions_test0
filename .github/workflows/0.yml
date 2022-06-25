@@ -40,6 +40,7 @@ jobs:
       - run: ls -ali
       - run: df -BM
       - run: ls -ali /
+      - run: ls -ali /sys
       - run: env
       - run: ps -ef
   Windows-Work:
